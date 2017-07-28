@@ -3,36 +3,49 @@
 # Carry out dynamic testing on the code below.
 # Correct the errors below that you spotted in task 1.
 
-def func1 val 
-  if val = 1
-  return true
+# correct val to be an argument of func1 
+def func1( val ) 
+# == for equality operator
+  if val == 1
+    # fix indent
+    return true
   else
-  return false
+    # fix indent
+    return false
   end
 end
   
-dif max a b
+# 'def' and a,b are arguments
+def max( a,b )
   if a > b
-      return a 
+    # fix indent
+    return a 
   else
-  b
+    # not an error, but make clear returning b
+    return b
   end 
 end 
-end 
+# remove extra end
+#end 
   
 def looper 
   for i in 1..10
-  puts i
+    puts i
   end
+
 end
- 
+
 failures = 0 
- 
-if looper == 10 
+
+# as written, looper will return a range 1..10 as the last
+# evaluated object, so correct if below to equate to this range 
+if looper == (1..10) 
   puts "looper passed"
 else
   puts "looper failed"
   failures = failures + 1
+#
+end
  
   
 if func1(3) == false
@@ -46,12 +59,15 @@ end
 if max(100,1) == 100 
   puts "max(100,1) passed"
 else
-  puts "func1(3) failed"
-  failrues = failures + 1
+  # correct function name
+  puts "max(100,1) failed"
+  # correct spelling of 'failures'
+  failures = failures + 1
 end
 
   
-if failures 
+# test only fails if failures > 0  
+if failures > 0
   puts "Test Failed"
 else
   puts "Test Passed"
